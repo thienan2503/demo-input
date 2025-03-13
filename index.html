@@ -6,125 +6,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Các loại input</title>
+    <title>User Profile Information</title>
 </head>
 
 <body>
     <div class="container">
         <div class="form-container">
-            <h2>Các loại input</h2>
-            <form>
+            <h2>User Profile Information</h2>
+            <form id="personalInfoForm">
+                <div class=" row mb-3">
+                    <label for="inputName" class="col-sm-3 col-form-label">Name <span
+                            class="text-danger">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputName" required tabindex="1">
+                        <div class="text-danger error-message" id="errorName"></div>
+                    </div>
+                </div>
+
                 <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Text</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputText">
+                    <label for="inputEmail" class="col-sm-3 col-form-label">Email <span
+                            class="text-danger">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com"
+                            required tabindex="2">
+                        <div class="text-danger error-message" id="errorEmail"></div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputPhone" class="col-sm-3 col-form-label">Phone number <span
+                            class="text-danger">*</span></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="inputPhone" required tabindex="3" length="10">
+                        <div class="text-danger error-message" id="errorPhone"></div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="example@gmail.com">
+                    <label for="inputLinkedIn" class="col-sm-3 col-form-label">LinkedIn Profile</label>
+                    <div class="col-sm-9">
+                        <input type="url" class="form-control" id="inputLinkedIn"
+                            placeholder="https://linkedin.com/in/your-profile" tabindex="5">
+                        <div class="text-danger error-message" id="errorLinkedIn"></div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword">
+                    <label for="inputAvatar" class="col-sm-3 col-form-label">Upload Avatar</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="inputAvatar" accept="image/*" tabindex="4">
+                        <div class="text-danger error-message" id="errorAvatar"></div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Number</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputNumber">
+                    <label for="inputDate" class="col-sm-3 col-form-label">Date of Birth</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="inputDate" tabindex="6">
+                        <div class="text-danger error-message" id="errorDate"></div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="formFile" class="col-sm-2 col-form-label">File</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="file" id="formFile">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="inputState" class="col-sm-2 col-form-label">Select</label>
-                    <div class="col-sm-10">
-                        <select id="inputState" class="form-select">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
-                    </div>
-                </div>
-                <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">Radio</legend>
-                    <div class="col-sm-10">
+                    <label class="col-sm-3 col-form-label">Gender</label>
+                    <div class="col-sm-9 d-flex gap-3 align-items-center">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                                value="option1">
-                            <label class="form-check-label" for="gridRadios1">
-                                First radio
-                            </label>
+                            <input class="form-check-input" type="radio" name="gender" id="genderMale">
+                            <label class="form-check-label" for="genderMale">Male</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                                value="option2">
-                            <label class="form-check-label" for="gridRadios2">
-                                Second radio
-                            </label>
+                            <input class="form-check-input" type="radio" name="gender" id="genderFemale">
+                            <label class="form-check-label" for="genderFemale">Female</label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
-                                value="option3">
-                            <label class="form-check-label" for="gridRadios3">
-                                Third radio
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1"
-                                value="option1">
-                            <label class="form-check-label" for="gridCheckbox1">
-                                First checkbox
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2"
-                                value="option2">
-                            <label class="form-check-label" for="gridCheckbox2">
-                                Second checkbox
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3"
-                                value="option3">
-                            <label class="form-check-label" for="gridCheckbox3">
-                                Third checkbox
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
-                <div class="row mb-3">
-                    <label for="customRange1" class="col-sm-2 col-form-label">Range</label>
-                    <div class="col-sm-10">
-                        <input type="range" class="form-range" id="customRange1">
+                        <div class="text-danger error-message" id="errorGender"></div>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="exampleColorInput" class="col-sm-2 col-form-label">Color</label>
-                    <div class="col-sm-10">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#0088CC" title="Choose your color">
+                    <label class="col-sm-3 col-form-label">Hobbies</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobbyReading">
+                            <label class="form-check-label" for="hobbyReading">Reading</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobbyMusic">
+                            <label class="form-check-label" for="hobbyMusic">Music</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobbyMovies">
+                            <label class="form-check-label" for="hobbyMovies">Movies</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hobbyOther">
+                            <label class="form-check-label" for="hobbyOther">Other</label>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Button</button>
+                <div class="col-12 button-container">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <button type="button" class="btn btn-primary showModal" data-bs-toggle="modal" hidden
+        data-bs-target="#exampleModal">
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Successfully</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your information has been saved successfully!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary oke">Oke</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("personalInfoForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Ngăn chặn hành động submit mặc định
+
+            // Kiểm tra từng input bắt buộc
+            let isValid = true;
+            const requiredFields = ["inputName", "inputEmail", "inputPhone"];
+
+            requiredFields.forEach((id) => {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add("is-invalid");
+                } else {
+                    field.classList.remove("is-invalid");
+                }
+            });
+
+            if (isValid) {
+                const showModal = document.querySelector(".showModal");
+                showModal.click();
+                document.querySelector(".oke").addEventListener("click", function () {
+                    window.location.href = "thanks.html";
+                });
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>
